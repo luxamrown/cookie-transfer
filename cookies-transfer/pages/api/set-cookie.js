@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
   // kalau local, domain cookie harus pakai .localhost (ga boleh .local)
   let cookieDomain =
-    bareDomain.includes("localhost") ? bareDomain : `.${bareDomain}`;
+    bareDomain.includes("localhost") ? bareDomain : `${bareDomain}`;
 
   res.setHeader("Set-Cookie", [
     `session_token=ABC123; Path=/; Domain=${cookieDomain}; HttpOnly; SameSite=Lax; Secure`,
