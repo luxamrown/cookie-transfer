@@ -9,7 +9,7 @@ export default function handler(req, res) {
     bareDomain.includes("localhost") ? bareDomain : `${bareDomain}`;
 
   res.setHeader("Set-Cookie", [
-    `session_token=ABC123; Path=/; Domain=${cookieDomain}; HttpOnly; SameSite=Lax; Secure`,
+    `session_token=ABC123; Path=/; Domain=sub-cookie-transfer.vercel.app; HttpOnly; SameSite=Lax; Secure`,
   ]);
 
   return res.status(200).json({
