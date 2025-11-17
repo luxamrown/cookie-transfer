@@ -35,7 +35,7 @@ const nextConfig = {
     return [
       {
         source: "/sub/:path*",
-        destination: `https://${sub}/:path*`,
+        destination: `https://${main}/:path*`,
       },
     ];
   },
