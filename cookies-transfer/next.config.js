@@ -29,7 +29,7 @@ function getMainDomain() {
 
 const nextConfig = {
   async rewrites() {
-    const main = getMainDomain();
+    const main = "sub-cookie-transfer.vercel.app";
     // const sub = `sub.${main}`;
 
     return [
