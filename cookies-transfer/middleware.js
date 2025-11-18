@@ -15,7 +15,7 @@ export function middleware(request) {
     maxAge: 60 * 60 * 24, // 1 day
     httpOnly: true,
     path: '/',
-    domain: "sub-cookie-transfer.vercel.app"
+    domain: "vercel.app"
   });
 
 
