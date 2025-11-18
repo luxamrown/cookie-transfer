@@ -16,8 +16,12 @@ export default function Home() {
           <button>Set Cookie cookie-transfer.vercel.app</button>
         </a>
 
-        <a href="/api/set-cookiee?domain=.cookie-transfer.vercel.app">
+        <a href="/api/set-cookie?domain=.cookie-transfer.vercel.app">
           <button>Set Cookie .cookie-transfer.vercel.app</button>
+        </a>
+
+        <a href="/api/set-cookie?domain=google.com">
+          <button>Set Cookie google.com</button>
         </a>
 
         <a href="/api/check-cookie">
