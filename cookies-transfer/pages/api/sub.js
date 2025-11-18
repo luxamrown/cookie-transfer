@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
 
-    const url = `https://sub-cookie-transfer.vercel.app/`;
+    const url = `https://sub-cookie-transfer.netlify.app/`;
     
     const upstream = await fetch(url, {
         method: "GET",

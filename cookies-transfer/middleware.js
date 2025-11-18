@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(request) {
-  const response = NextResponse.rewrite("https://sub-cookie-transfer.vercel.app/");
+  const response = NextResponse.rewrite("https://sub-cookie-transfer.netlify.app/");
 
 //   response.cookies.set('rewrite_cookie', 'METS11223344', {
 //     maxAge: 60 * 60 * 24, // 1 day
@@ -15,7 +15,7 @@ export function middleware(request) {
     maxAge: 60 * 60 * 24, // 1 day
     httpOnly: true,
     path: '/',
-    domain: "vercel.app"
+    domain: "netlify.app"
   });
 
 
