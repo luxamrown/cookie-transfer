@@ -32,7 +32,11 @@ export default function Home() {
 
       <div style={{ marginTop: 20 }}>
         <a href="/sub">
-          <button>Go to SUB via Rewrite</button>
+          <button>Go to SUB via Middleware Rewrite</button>
+        </a>
+
+        <a href="/api/sub">
+          <button>Go to SUB via API Rewrite</button>
         </a>
       </div>
     </div>
