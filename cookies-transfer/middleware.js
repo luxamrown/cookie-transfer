@@ -1,8 +1,14 @@
 // middleware.js
 import { NextResponse } from 'next/server';
 
-export function middleware(request) {
-  const response = NextResponse.rewrite("https://sub-cookie-transfer.netlify.app/");
+export function middleware(req, res) {
+    console.log(req.nextUrl.searchParams.get('id'))
+    
+    const id = req.nextUrl.searchParams.get('id')
+    const jwt = req.nextUrl.searchParams.get('jwt')
+    const chturl = req.nextUrl.searchParams.get('chturl')
+
+  const response = NextResponse.rewrite(`https://${chturl}/?data=${id}`);
 
 //   response.cookies.set('rewrite_cookie', 'METS11223344', {
 //     maxAge: 60 * 60 * 24, // 1 day
@@ -11,10 +17,12 @@ export function middleware(request) {
 //     domain: ".sub-cookie-transfer.vercel.app"
 //   });
 
-    response.cookies.set('rewrite_cookie', 'MATS11223344', {
+    response.cookies.set('member_jwt', jwt, {
     maxAge: 60 * 60 * 24, // 1 day
     httpOnly: true,
-    path: '/'
+    path: '/',
+    secure: true,
+    sameSite: "none"
   });
 
 

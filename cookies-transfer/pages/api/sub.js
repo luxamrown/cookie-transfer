@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
+    const {id, jwt, chturl} = req.query
 
-    const url = `https://sub-cookie-transfer.netlify.app/`;
+    const url = `https://${chturl}/?data=${id}`;
     
     const upstream = await fetch(url, {
         method: "GET",
@@ -11,7 +12,7 @@ export default async function handler(req, res) {
     });
 
     res.setHeader("Set-Cookie",
-        `rewriteie=_cookETS123444442123 Path=/; Max-Age=${60 * 60 * 24 * 7}; HttpOnly; SameSite=Lax`
+        `member_jwt=${jwt} Path=/; Max-Age=${60 * 60 * 24 * 7}; HttpOnly; Secure; SameSite=None`
     );
 
     // res.setHeader("Set-Cookie",
