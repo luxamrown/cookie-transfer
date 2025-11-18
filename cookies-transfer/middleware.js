@@ -14,8 +14,7 @@ export function middleware(request) {
     response.cookies.set('rewrite_cookie', 'MATS11223344', {
     maxAge: 60 * 60 * 24, // 1 day
     httpOnly: true,
-    path: '/',
-    domain: "netlify.app"
+    path: '/'
   });
 
 

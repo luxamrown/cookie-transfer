@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     });
 
     res.setHeader("Set-Cookie",
-        `rewriteie=_cookETS123444442123 Path=/; Max-Age=${60 * 60 * 24 * 7}; Domain=vercel.app; HttpOnly; SameSite=Lax`
+        `rewriteie=_cookETS123444442123 Path=/; Max-Age=${60 * 60 * 24 * 7}; HttpOnly; SameSite=Lax`
     );
 
     // res.setHeader("Set-Cookie",
