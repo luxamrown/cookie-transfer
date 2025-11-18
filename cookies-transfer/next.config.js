@@ -1,22 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-function normalizeDomain(domain) {
-  if (!domain) return null;
-
-  // remove https:// or http://
-  let clean = domain.replace(/^https?:\/\//, "");
-
-  // remove trailing slash
-  clean = clean.replace(/\/$/, "");
-
-  return clean;
-}
-
 function getMainDomain() {
-  // Priority 1: custom domain (production)
-  if (process.env.NEXT_PUBLIC_MAIN_DOMAIN) {
-    return normalizeDomain(process.env.NEXT_PUBLIC_MAIN_DOMAIN);
-  }
 
   // Priority 2: Vercel auto domain
   if (process.env.VERCEL_URL) {
@@ -29,8 +13,7 @@ function getMainDomain() {
 
 const nextConfig = {
   async rewrites() {
-    const main = "sub-cookie-transfer.vercel.app";
-    // const sub = `sub.${main}`;
+    const main = process.env.VERCEL_URL;
 
     return [
       {

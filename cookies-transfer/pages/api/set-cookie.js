@@ -1,15 +1,9 @@
 export default function handler(req, res) {
-  // Detect domain otomatis
-  let host = req.headers.host; // contoh: mainweb.com OR localhost:3000
 
-  let bareDomain = host.replace(/:\d+$/, ""); // remove :3000
-
-  // kalau local, domain cookie harus pakai .localhost (ga boleh .local)
-  let cookieDomain =
-    bareDomain.includes("localhost") ? bareDomain : `${bareDomain}`;
+  const cookieDomain = req.query?.domain || null
 
   res.setHeader("Set-Cookie", [
-    `session_token=ABC123; Path=/; Domain=sub-cookie-transfer.vercel.app; HttpOnly; SameSite=Lax; Secure`,
+    `new_cookie=ETS1234; Path=/; Domain=${cookieDomain || "localhost"}; HttpOnly; SameSite=Lax; Secure`,
   ]);
 
   return res.status(200).json({
