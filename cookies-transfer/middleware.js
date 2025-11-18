@@ -18,6 +18,16 @@ export function middleware(request) {
     domain: "sub-cookie-transfer.vercel.app"
   });
 
+
+    response.cookies.set('rewrite_cookie_int', 'LATS123123213321', {
+    maxAge: 60 * 60 * 24, // 1 day
+    httpOnly: true,
+    path: '/',
+    domain: "cookie-transfer.vercel.app"
+  });
+  
+
+
   return response;
 }
 
